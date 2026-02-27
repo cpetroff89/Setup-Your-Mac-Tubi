@@ -2253,11 +2253,11 @@ infobox="Analyzing input …" # Customize at "Update Setup Your Mac's infobox"
 
 
 # Create `overlayicon` from Self Service's custom icon (thanks, @meschwartz!)
-# xxd -p -s 260 "$(defaults read /Library/Preferences/com.jamfsoftware.jamf self_service_app_path)"/Icon$'\r'/..namedfork/rsrc | xxd -r -p > /var/tmp/overlayicon.icns
-# overlayicon="/var/tmp/overlayicon.icns"
+xxd -p -s 260 "$(defaults read /Library/Preferences/com.jamfsoftware.jamf self_service_app_path)"/Icon$'\r'/..namedfork/rsrc | xxd -r -p > /var/tmp/overlayicon.icns
+overlayicon="/Library/Fox/Images/Brands/Tubi/Tubi.png"
 
 # Uncomment to use generic, Self Service icon as overlayicon
-overlayicon="https://ics.services.jamfcloud.com/icon/hash_aa63d5813d6ed4846b623ed82acdd1562779bf3716f2d432a8ee533bba8950ee"
+#overlayicon="https://ics.services.jamfcloud.com/icon/hash_aa63d5813d6ed4846b623ed82acdd1562779bf3716f2d432a8ee533bba8950ee"
 
 # Uncomment to use your company's custom Self Service icon as overlayicon
 # overlayicon="https://company.jamfcloud.com/api/v1/branding-images/download/1"
@@ -2355,18 +2355,6 @@ dialogSetupYourMacCMD="$dialogBinary \
                 "steps": [
         
                     {
-                        "listitem": "Tubi Assets",
-                        "subtitle": "",
-                        "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_b0bb0c538808be42ba9e65a5627c5d5aa78ffb0465def3a8438743de9e2ec77b",
-                        "progresstext": "Installing Assets..",
-                        "trigger_list": [
-                                        {
-                                            "trigger": "tubi_assets",
-                                            "validation": "None"
-                                        }
-                        ]
-                    },
-                    {
                         "listitem": "Tailscale",
                         "subtitle": "",
                         "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_83371ed5e2d14840b2265eb32e46e3b980caff528bf1b411676c925e20531798",
@@ -2403,6 +2391,18 @@ dialogSetupYourMacCMD="$dialogBinary \
                         ]
                     },
                     {
+                        "listitem": "Default Browser (Island)",
+                        "subtitle": "",
+                        "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_0c196c67499ef34c2a606fca65bbdd8ad4aa82b99bbb83c8c182fa90cd515848",
+                        "progresstext": "Setting Island As Default Browser..",
+                        "trigger_list": [
+                                        {
+                                            "trigger": "Island_default",
+                                            "validation": "None"
+                                        }
+                        ]
+                    },
+                    {
                         "listitem": "DockUtil",
                         "subtitle": "",
                         "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_b0bb0c538808be42ba9e65a5627c5d5aa78ffb0465def3a8438743de9e2ec77b",
@@ -2422,6 +2422,18 @@ dialogSetupYourMacCMD="$dialogBinary \
                         "trigger_list": [
                                         {
                                             "trigger": "desktoppr",
+                                            "validation": "None"
+                                        }
+                        ]
+                    },
+                    {
+                        "listitem": "Tubi Assets",
+                        "subtitle": "",
+                        "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_b0bb0c538808be42ba9e65a5627c5d5aa78ffb0465def3a8438743de9e2ec77b",
+                        "progresstext": "Installing Assets..",
+                        "trigger_list": [
+                                        {
+                                            "trigger": "tubi_assets",
                                             "validation": "None"
                                         }
                         ]
@@ -2461,23 +2473,13 @@ dialogSetupYourMacCMD="$dialogBinary \
                                             "validation": "None"
                                         }
                         ]
-                    },
-                    {
-                        "listitem": "Update Inventory",
-                        "subtitle": "",
-                        "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_2e64eed9de1564f555bc31a97d07761d0e002cb9873923f9a96b1fe328fdec44",
-                        "progresstext": "Updating Inventory..",
-                        "trigger_list": [
-                                        {
-                                            "trigger": "recon",
-                                            "validation": "recon"
-                                        }
-                        ]
                     }
                 ]
             }
             '
                 ;;
+                
+
                 
     esac
             
