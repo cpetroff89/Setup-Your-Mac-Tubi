@@ -137,7 +137,7 @@ emailEnding=""
 positionList=$( echo "${positionListRaw}" | tr ',' '\n' | sort -f | uniq | sed -e 's/^/\"/' -e 's/$/\",/' -e '$ s/.$//' )
 
 # [SYM-Helper] Branding overrides
-brandingBanner="/Library/Fox/Images/Fox_tech_banner.png" # [Image by benzoix on Freepik](https://www.freepik.com/author/benzoix)
+brandingBanner="/Library/Fox/Images/Fox_tech_banner_dark.png" # [Image by benzoix on Freepik](https://www.freepik.com/author/benzoix)
 brandingBannerDisplayText="false"
 brandingIconLight="https://use2.ics.services.jamfcloud.com/icon/hash_b0bb0c538808be42ba9e65a5627c5d5aa78ffb0465def3a8438743de9e2ec77b"
 brandingIconDark="https://use2.ics.services.jamfcloud.com/icon/hash_b0bb0c538808be42ba9e65a5627c5d5aa78ffb0465def3a8438743de9e2ec77b"
@@ -2254,7 +2254,7 @@ infobox="Analyzing input …" # Customize at "Update Setup Your Mac's infobox"
 
 # Create `overlayicon` from Self Service's custom icon (thanks, @meschwartz!)
 xxd -p -s 260 "$(defaults read /Library/Preferences/com.jamfsoftware.jamf self_service_app_path)"/Icon$'\r'/..namedfork/rsrc | xxd -r -p > /var/tmp/overlayicon.icns
-overlayicon="/Library/Fox/Images/Brands/Tubi/Tubi.png"
+overlayicon="https://use2.ics.services.jamfcloud.com/icon/hash_048622e52a61b25bdb4647169795698fb71d661bdfc031c31d2da1670eb2d3e6"
 
 # Uncomment to use generic, Self Service icon as overlayicon
 #overlayicon="https://ics.services.jamfcloud.com/icon/hash_aa63d5813d6ed4846b623ed82acdd1562779bf3716f2d432a8ee533bba8950ee"
@@ -2355,22 +2355,10 @@ dialogSetupYourMacCMD="$dialogBinary \
                 "steps": [
         
                     {
-                        "listitem": "Tailscale",
-                        "subtitle": "",
-                        "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_83371ed5e2d14840b2265eb32e46e3b980caff528bf1b411676c925e20531798",
-                        "progresstext": "Installing Tailscale..",
-                        "trigger_list": [
-                                        {
-                                            "trigger": "tailscale",
-                                            "validation": "None"
-                                        }
-                        ]
-                    },
-                    {
-                        "listitem": "Install Xcode",
+                        "listitem": "Xcode CLI Tools",
                         "subtitle": "",
                         "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_a30fea40159dd577446d4514fe022f1582b10734131767084fd24f9688ebb76c",
-                        "progresstext": "Installing Xcode..",
+                        "progresstext": "Installing Xcode Command Line Interface Tools..",
                         "trigger_list": [
                                         {
                                             "trigger": "xcode",
@@ -2391,45 +2379,9 @@ dialogSetupYourMacCMD="$dialogBinary \
                         ]
                     },
                     {
-                        "listitem": "Default Browser (Island)",
+                        "listitem": "Assets",
                         "subtitle": "",
-                        "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_0c196c67499ef34c2a606fca65bbdd8ad4aa82b99bbb83c8c182fa90cd515848",
-                        "progresstext": "Setting Island As Default Browser..",
-                        "trigger_list": [
-                                        {
-                                            "trigger": "Island_default",
-                                            "validation": "None"
-                                        }
-                        ]
-                    },
-                    {
-                        "listitem": "DockUtil",
-                        "subtitle": "",
-                        "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_b0bb0c538808be42ba9e65a5627c5d5aa78ffb0465def3a8438743de9e2ec77b",
-                        "progresstext": "Installing Dockutil..",
-                        "trigger_list": [
-                                        {
-                                            "trigger": "dockutil",
-                                            "validation": "None"
-                                        }
-                        ]
-                    },
-                    {
-                        "listitem": "Desktoppr",
-                        "subtitle": "",
-                        "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_b0bb0c538808be42ba9e65a5627c5d5aa78ffb0465def3a8438743de9e2ec77b",
-                        "progresstext": "Installing Desktoppr..",
-                        "trigger_list": [
-                                        {
-                                            "trigger": "desktoppr",
-                                            "validation": "None"
-                                        }
-                        ]
-                    },
-                    {
-                        "listitem": "Tubi Assets",
-                        "subtitle": "",
-                        "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_b0bb0c538808be42ba9e65a5627c5d5aa78ffb0465def3a8438743de9e2ec77b",
+                        "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_5bc54c331d98ed7c5c7653b12b895b5f8372c4251f46e9098778cb6cf686a2cd",
                         "progresstext": "Installing Assets..",
                         "trigger_list": [
                                         {
@@ -2439,9 +2391,9 @@ dialogSetupYourMacCMD="$dialogBinary \
                         ]
                     },
                     {
-                        "listitem": "Configure Dock",
+                        "listitem": "Dock",
                         "subtitle": "",
-                        "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_b0bb0c538808be42ba9e65a5627c5d5aa78ffb0465def3a8438743de9e2ec77b",
+                        "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_1c4821aae24b160a4af41aaf11bbf90ae8ec9f4d97c28c1469a404f3c5c58289",
                         "progresstext": "Configuring Dock..",
                         "trigger_list": [
                                         {
@@ -2451,7 +2403,7 @@ dialogSetupYourMacCMD="$dialogBinary \
                         ]
                     },
                     {
-                        "listitem": "Set Wallpaper",
+                        "listitem": "Wallpaper",
                         "subtitle": "",
                         "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_b0bb0c538808be42ba9e65a5627c5d5aa78ffb0465def3a8438743de9e2ec77b",
                         "progresstext": "Setting Wallpaper..",
@@ -2463,9 +2415,9 @@ dialogSetupYourMacCMD="$dialogBinary \
                         ]
                     },
                     {
-                        "listitem": "Send Enrollment Complete Slack Notification",
+                        "listitem": "Enrollment Complete Slack Notification",
                         "subtitle": "",
-                        "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_b0bb0c538808be42ba9e65a5627c5d5aa78ffb0465def3a8438743de9e2ec77b",
+                        "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_3da36431e75d507fb294aa429204a3c557ab06ce20016150157c5342901ceea9",
                         "progresstext": "Sending Enrollment Complete Slack Notification..",
                         "trigger_list": [
                                         {
@@ -2478,6 +2430,7 @@ dialogSetupYourMacCMD="$dialogBinary \
             }
             '
                 ;;
+
                 
 
                 
