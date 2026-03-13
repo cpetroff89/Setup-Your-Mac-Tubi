@@ -1,0 +1,83 @@
+    * ) # Catch-all )
+
+            policyJSON='
+            {
+                "steps": [
+        
+                    {
+                        "listitem": "Xcode CLI Tools",
+                        "subtitle": "",
+                        "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_a30fea40159dd577446d4514fe022f1582b10734131767084fd24f9688ebb76c",
+                        "progresstext": "Installing Xcode Command Line Interface Tools..",
+                        "trigger_list": [
+                                         {
+                                            "trigger": "xcode",
+                                            "validation": "None"
+                                         }
+                        ]
+                    },
+                    {
+                        "listitem": "Crowdstrike Falcon",
+                        "subtitle": "",
+                        "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_b2f14d19281db623e292ba0e1e68aef0584e3b7e1803bd31b13be6780df7e75b",
+                        "progresstext": "Registering Crowdstrike Falcon with the Tubi license..",
+                        "trigger_list": [
+                                         {
+                                            "trigger": "CS-falcon-license",
+                                            "validation": "None"
+                                         }
+                        ]
+                    },
+                    {
+                        "listitem": "Assets",
+                        "subtitle": "",
+                        "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_5bc54c331d98ed7c5c7653b12b895b5f8372c4251f46e9098778cb6cf686a2cd",
+                        "progresstext": "Installing Assets..",
+                        "trigger_list": [
+                                         {
+                                            "trigger": "tubi_assets",
+                                            "validation": "None"
+                                         }
+                        ]
+                    },
+                    {
+                        "listitem": "Dock",
+                        "subtitle": "",
+                        "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_1c4821aae24b160a4af41aaf11bbf90ae8ec9f4d97c28c1469a404f3c5c58289",
+                        "progresstext": "Configuring Dock..",
+                        "trigger_list": [
+                                         {
+                                            "trigger": "config_tubi_dock",
+                                            "validation": "None"
+                                         }
+                        ]
+                    },
+                    {
+                        "listitem": "Wallpaper",
+                        "subtitle": "",
+                        "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_b0bb0c538808be42ba9e65a5627c5d5aa78ffb0465def3a8438743de9e2ec77b",
+                        "progresstext": "Setting Wallpaper..",
+                        "trigger_list": [
+                                         {
+                                            "trigger": "config_desktop_background",
+                                            "validation": "None"
+                                         }
+                        ]
+                    },
+                    {
+                        "listitem": "Enrollment Complete Slack Notification",
+                        "subtitle": "",
+                        "icon": "https://use2.ics.services.jamfcloud.com/icon/hash_3da36431e75d507fb294aa429204a3c557ab06ce20016150157c5342901ceea9",
+                        "progresstext": "Sending Enrollment Complete Slack Notification..",
+                        "trigger_list": [
+                                         {
+                                            "trigger": "slack_notification_new",
+                                            "validation": "None"
+                                         }
+                        ]
+                    }
+                ]
+            }
+            '
+            ;;
+

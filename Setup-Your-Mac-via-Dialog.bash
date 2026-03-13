@@ -895,10 +895,10 @@ function completionAction() {
                 logMessage "COMPLETION ACTION" "Restart, requiring user-interaction"
                 killProcess "Self Service"
                 wait
-                # runAsUser osascript -e 'tell app "System Events" to restart'
+                runAsUser osascript -e 'tell app "System Events" to restart'
                 # sleep 5 && runAsUser osascript -e 'tell app "System Events" to restart' &
-                sleep 5 && shutdown -r now &
-                ;;
+                # sleep 5 && shutdown -r now &
+            ;;
 
             "Restart Confirm" )
                 logMessage "COMPLETION ACTION" "Restart, only after macOS time-out or user confirmation"
